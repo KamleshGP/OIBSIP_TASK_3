@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 from PIL import Image
 
-model = pickle.load(open("cpp.pkl", "rb"))
+model = pickle.load(open("cpp.pk2", "rb"))
 
 df = pd.read_csv("Cleaned_CarPrice.csv")
 
@@ -33,4 +33,4 @@ if st.button("Predict"):
     prediction = int(model.predict(pd.DataFrame([[cname1, ftype1, atype1, cbody1, dwheel1, etype1, st1, hp1, pe1]],
                                                 columns=["carname", "fueltype", "aspiration", "carbody", "drivewheel",
                                                          "enginetype", "stroke", "horsepower", "peakrpm"])))
-    st.write(f"### Predicted Price is :- ${prediction}")
+    st.write(f"### Predicted Price is :- RS.{prediction}")
